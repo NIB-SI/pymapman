@@ -15,7 +15,7 @@ The input SVG is created in a SVG editing tool, such as Inkscape. The locations 
 You can install pymapman from GitHub via pip:
 
 ```bash
-pip install "pymapman @ git+git@github.com:NIB-SI/pymapman.git"
+pip install "pymapman @ git+ssh://git@github.com/NIB-SI/pymapman.git"
 ```
 
 ## Usage
