@@ -53,6 +53,6 @@ You can use any SVG elements, as long as they have `x` and `y` (or `cx` and `cy`
 
 Here is an example of annotating such an ID in Inkscape:
 
-![Inkscape example](docs/inkscape_rec-id.png)
+![Inkscape example](docs/inkscape-rec-id.png)
 
 `pymapman` will extract the position of the element (`x` and `y` in this case), __remove__ the element from the SVG to create a "clean" background image, and use the extracted position to create the XML file. 
