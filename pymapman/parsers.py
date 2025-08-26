@@ -83,9 +83,12 @@ def diagram_from_svg(
     nodes = []
     for n in list(tree.iter()):
         id_ = n.attrib.get("id")
-        if id_ and (match := re.match(r"^gmm\:([0-9]+(?:\.[0-9]+)*)$", id_)):
+        if id_ and (match := re.match(r"^mm\:([0-9]+(?:\.[0-9]+)*)$", id_)):
             gmm = match[1]
             x, y = float(n.attrib.get("x")), float(n.attrib.get("y"))
+            # if not x, y try cx, cy
+            if x is None or y is None:
+                x, y = float(n.attrib.get("cx")), float(n.attrib.get("cy"))
             recursive = n.attrib.get("mm_recursive", recursive_default)
             visualizationType = n.attrib.get("mm_visualizationType", visualizationType_default)
             nodes.append(MapManNode(gmm, x, y, recursive, visualizationType))

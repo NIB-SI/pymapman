@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pymapman"
+version = "0.0.1"
+readme = "README.md"
+authors = [{name="Carissa Bleker", email="carissa.bleker@nib.si" }]
+description = "Python tool to help create MapMan diagrams"
+dependencies = [
+    "click",
+    'lxml',
+]
+
+[tool.setuptools]
+packages = ["pymapman"]
+
+# cli
+[project.scripts]
+pymapman = "pymapman.cli:cli"
